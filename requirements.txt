@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-multipart
+sqlalchemy
+alembic
+python-dotenv
+requests
+httpx
+pytest
+pytest-asyncio
+psutil
+email-validator
+cassandra-driver[libev]
+uuid 
