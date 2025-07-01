@@ -1,4 +1,4 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 from typing import Optional, List, Dict
 from datetime import datetime
 
@@ -48,5 +48,4 @@ class GameResponse(GameBase):
     created_at: str = Field(..., description="Game creation time")
     updated_at: str = Field(..., description="Game last update time")
     
-    class Config:
-        from_attributes = True 
+    model_config = ConfigDict(from_attributes=True) 

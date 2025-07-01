@@ -8,6 +8,7 @@ router = APIRouter()
 @router.get("/", response_model=HealthResponse)
 async def health_check():
     """Basic health check endpoint"""
+    print("Health check endpoint called")
     return HealthResponse(status="healthy")
 
 

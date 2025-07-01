@@ -1,0 +1,1137 @@
+{
+  "info": {
+    "_postman_id": "17b0b24e-a252-46e1-9c29-5dda56dc241c",
+    "name": "ADMIN API",
+    "description": "Postman collection for FastAPI ADMIN API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "44614994"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "item": [
+        {
+          "name": "Basic Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/health/",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "health",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Detailed Health Check",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/health/detailed",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "health",
+                "detailed"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Users",
+      "item": [
+        {
+          "name": "Get Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/users/",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/users/:user_id",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                ":user_id"
+              ],
+              "variable": [
+                {
+                  "key": "user_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User by Mobile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/users/mobile/:mobile_no",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "mobile",
+                ":mobile_no"
+              ],
+              "variable": [
+                {
+                  "key": "mobile_no",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User by Email",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/users/email/:email",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "email",
+                ":email"
+              ],
+              "variable": [
+                {
+                  "key": "email",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"mobile_no\": \"1234567890\",\n  \"email\": \"john@example.com\",\n  \"full_name\": \"John Doe\",\n  \"state\": \"Active\",\n  \"status\": \"active\"\n}"
+            },
+            "url": {
+              "raw": "{{live}}/api/v1/users/",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"full_name\": \"Jane Doe\"\n}"
+            },
+            "url": {
+              "raw": "{{live}}/api/v1/users/:user_id",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                ":user_id"
+              ],
+              "variable": [
+                {
+                  "key": "user_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete User",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/users/:user_id",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "users",
+                ":user_id"
+              ],
+              "variable": [
+                {
+                  "key": "user_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Contests",
+      "item": [
+        {
+          "name": "Get Contests",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/contests/",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "contests",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Active Contests",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/contests/active",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "contests",
+                "active"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Contest by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/contests/:contest_id",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "contests",
+                ":contest_id"
+              ],
+              "variable": [
+                {
+                  "key": "contest_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Contest",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contest_name\": \"Sample Contest\",\n  \"contest_win_price\": \"100\",\n  \"contest_entryfee\": \"10\",\n  \"contest_joinuser\": 0,\n  \"contest_activeuser\": 0,\n  \"contest_starttime\": \"2024-01-01T00:00:00Z\",\n  \"contest_endtime\": \"2024-01-02T00:00:00Z\"\n}"
+            },
+            "url": {
+              "raw": "{{live}}/api/v1/contests/",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "contests",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Contest",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"contest_name\": \"Updated Contest\"\n}"
+            },
+            "url": {
+              "raw": "{{live}}/api/v1/contests/:contest_id",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "contests",
+                ":contest_id"
+              ],
+              "variable": [
+                {
+                  "key": "contest_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Contest",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/contests/:contest_id",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "contests",
+                ":contest_id"
+              ],
+              "variable": [
+                {
+                  "key": "contest_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Increment Join User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/contests/:contest_id/increment-join",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "contests",
+                ":contest_id",
+                "increment-join"
+              ],
+              "variable": [
+                {
+                  "key": "contest_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Increment Active User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/contests/:contest_id/increment-active",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "contests",
+                ":contest_id",
+                "increment-active"
+              ],
+              "variable": [
+                {
+                  "key": "contest_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "OTP",
+      "item": [
+        {
+          "name": "Get OTPs by Phone/Email",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/otp/phone-email/:phone_or_email",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "otp",
+                "phone-email",
+                ":phone_or_email"
+              ],
+              "variable": [
+                {
+                  "key": "phone_or_email",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get OTPs by Purpose",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/otp/purpose/:purpose",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "otp",
+                "purpose",
+                ":purpose"
+              ],
+              "variable": [
+                {
+                  "key": "purpose",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Verified OTPs",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/otp/verified",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "otp",
+                "verified"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get OTP by Phone/Email and Purpose",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/otp/:phone_or_email/:purpose",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "otp",
+                ":phone_or_email",
+                ":purpose"
+              ],
+              "variable": [
+                {
+                  "key": "phone_or_email",
+                  "value": ""
+                },
+                {
+                  "key": "purpose",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create OTP",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone_or_email\": \"1234567890\",\n  \"otp_code\": \"123456\",\n  \"purpose\": \"verification\",\n  \"expires_at\": \"2024-01-01T01:00:00Z\",\n  \"is_verified\": false,\n  \"attempt_count\": 0\n}"
+            },
+            "url": {
+              "raw": "{{live}}/api/v1/otp/",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "otp",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update OTP",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"is_verified\": true\n}"
+            },
+            "url": {
+              "raw": "{{live}}/api/v1/otp/:phone_or_email/:purpose/:created_at",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "otp",
+                ":phone_or_email",
+                ":purpose",
+                ":created_at"
+              ],
+              "variable": [
+                {
+                  "key": "phone_or_email",
+                  "value": ""
+                },
+                {
+                  "key": "purpose",
+                  "value": ""
+                },
+                {
+                  "key": "created_at",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete OTP",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/otp/:phone_or_email/:purpose/:created_at",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "otp",
+                ":phone_or_email",
+                ":purpose",
+                ":created_at"
+              ],
+              "variable": [
+                {
+                  "key": "phone_or_email",
+                  "value": ""
+                },
+                {
+                  "key": "purpose",
+                  "value": ""
+                },
+                {
+                  "key": "created_at",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Verify OTP",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"phone_or_email\": \"1234567890\",\n  \"otp_code\": \"123456\",\n  \"purpose\": \"verification\"\n}"
+            },
+            "url": {
+              "raw": "{{live}}/api/v1/otp/verify",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "otp",
+                "verify"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Increment Attempt Count",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/otp/:phone_or_email/:purpose/increment-attempt",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "otp",
+                ":phone_or_email",
+                ":purpose",
+                "increment-attempt"
+              ],
+              "variable": [
+                {
+                  "key": "phone_or_email",
+                  "value": ""
+                },
+                {
+                  "key": "purpose",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Expired OTPs",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/otp/expired",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "otp",
+                "expired"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "League Joins",
+      "item": [
+        {
+          "name": "Get League Joins",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/league-joins/",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "league-joins",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get League Joins by League ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/league-joins/league/:league_id",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "league-joins",
+                "league",
+                ":league_id"
+              ],
+              "variable": [
+                {
+                  "key": "league_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get League Joins by Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/league-joins/league/:league_id/status/:status",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "league-joins",
+                "league",
+                ":league_id",
+                "status",
+                ":status"
+              ],
+              "variable": [
+                {
+                  "key": "league_id",
+                  "value": ""
+                },
+                {
+                  "key": "status",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User League Joins",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/league-joins/user/:user_id",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "league-joins",
+                "user",
+                ":user_id"
+              ],
+              "variable": [
+                {
+                  "key": "user_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get League Joins by Invite Code",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/league-joins/invite-code/:invite_code",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "league-joins",
+                "invite-code",
+                ":invite_code"
+              ],
+              "variable": [
+                {
+                  "key": "invite_code",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get League Join by User and League",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/league-joins/league/:league_id/user/:user_id",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "league-joins",
+                "league",
+                ":league_id",
+                "user",
+                ":user_id"
+              ],
+              "variable": [
+                {
+                  "key": "league_id",
+                  "value": ""
+                },
+                {
+                  "key": "user_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create League Join",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"league_id\": \"league123\",\n  \"status\": \"active\",\n  \"user_id\": \"user123\",\n  \"invite_code\": \"ABC123\",\n  \"role\": \"member\",\n  \"extra_data\": \"Additional data\"\n}"
+            },
+            "url": {
+              "raw": "{{live}}/api/v1/league-joins/",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "league-joins",
+                ""
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update League Join",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"inactive\"\n}"
+            },
+            "url": {
+              "raw": "{{live}}/api/v1/league-joins/:league_id/:status/:user_id/:joined_at",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "league-joins",
+                ":league_id",
+                ":status",
+                ":user_id",
+                ":joined_at"
+              ],
+              "variable": [
+                {
+                  "key": "league_id",
+                  "value": ""
+                },
+                {
+                  "key": "status",
+                  "value": ""
+                },
+                {
+                  "key": "user_id",
+                  "value": ""
+                },
+                {
+                  "key": "joined_at",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete League Join",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/league-joins/:league_id/:status/:user_id/:joined_at",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "league-joins",
+                ":league_id",
+                ":status",
+                ":user_id",
+                ":joined_at"
+              ],
+              "variable": [
+                {
+                  "key": "league_id",
+                  "value": ""
+                },
+                {
+                  "key": "status",
+                  "value": ""
+                },
+                {
+                  "key": "user_id",
+                  "value": ""
+                },
+                {
+                  "key": "joined_at",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Join Status",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/league-joins/league/:league_id/user/:user_id/status?new_status=active&status_id=status123",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "league-joins",
+                "league",
+                ":league_id",
+                "user",
+                ":user_id",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "new_status",
+                  "value": "active"
+                },
+                {
+                  "key": "status_id",
+                  "value": "status123"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "league_id",
+                  "value": ""
+                },
+                {
+                  "key": "user_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get League Member Count",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{live}}/api/v1/league-joins/league/:league_id/member-count?status=active",
+              "host": [
+                "{{live}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "league-joins",
+                "league",
+                ":league_id",
+                "member-count"
+              ],
+              "query": [
+                {
+                  "key": "status",
+                  "value": "active"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "league_id",
+                  "value": ""
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import logging
 from cassandra.cluster import Cluster
 from cassandra.auth import PlainTextAuthProvider
+from cassandra.policies import DCAwareRoundRobinPolicy
 from cassandra.cqlengine import connection
 from app.core.config import settings
 
@@ -27,7 +28,9 @@ class CassandraManager:
             self.cluster = Cluster(
                 [settings.CASSANDRA_HOST],
                 port=settings.CASSANDRA_PORT,
-                auth_provider=auth_provider
+                auth_provider=auth_provider,
+                load_balancing_policy=DCAwareRoundRobinPolicy(local_dc='datacenter1'),
+                protocol_version=5
             )
             
             self.session = self.cluster.connect()
@@ -48,7 +51,9 @@ class CassandraManager:
             connection.setup(
                 [settings.CASSANDRA_HOST],
                 settings.CASSANDRA_KEYSPACE,
-                auth_provider=auth_provider
+                auth_provider=auth_provider,
+                load_balancing_policy=DCAwareRoundRobinPolicy(local_dc='datacenter1'),
+                protocol_version=5
             )
             
             logger.info("Successfully connected to Cassandra cluster")
@@ -176,33 +181,7 @@ def create_tables(session):
         )
     """)
     
-    # Server announcements table
-    session.execute("""
-        CREATE TABLE IF NOT EXISTS server_announcements (
-            id TEXT PRIMARY KEY,
-            title TEXT,
-            content TEXT,
-            type TEXT,
-            priority TEXT,
-            is_active BOOLEAN,
-            created_at TEXT
-        )
-    """)
-    
-    # Game updates table
-    session.execute("""
-        CREATE TABLE IF NOT EXISTS game_updates (
-            id TEXT PRIMARY KEY,
-            game_id TEXT,
-            version TEXT,
-            title TEXT,
-            description TEXT,
-            features LIST<TEXT>,
-            bug_fixes LIST<TEXT>,
-            is_required BOOLEAN,
-            created_at TEXT
-        )
-    """)
+
     
     # OTP store table
     session.execute("""

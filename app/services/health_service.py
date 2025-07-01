@@ -67,7 +67,7 @@ class HealthService:
             return {
                 "status": "healthy",
                 "response_time": 0.05,
-                "endpoints": ["/api/v1/users", "/api/v1/items"]
+                "endpoints": ["/api/v1/users"]
             }
         except Exception as e:
             logger.error(f"External API health check failed: {e}")

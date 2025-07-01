@@ -1,4 +1,4 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from typing import List, Optional
 import os
 
@@ -42,9 +42,7 @@ class Settings(BaseSettings):
     EXTERNAL_API_URL: Optional[str] = None
     EXTERNAL_API_KEY: Optional[str] = None
     
-    class Config:
-        env_file = ".env"
-        case_sensitive = True
+    model_config = SettingsConfigDict(env_file=".env", case_sensitive=True)
 
 
 # Create settings instance

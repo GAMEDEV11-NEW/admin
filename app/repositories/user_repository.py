@@ -14,12 +14,18 @@ class UserRepository:
     def __init__(self):
         self.session: Session = get_cassandra_session()
     
+    def _row_to_dict(self, row) -> dict:
+        """Convert Cassandra row to dictionary"""
+        if row is None:
+            return None
+        return {column: getattr(row, column) for column in row._fields}
+    
     async def get_all_users(self, limit: int = 100) -> List[dict]:
         """Get all users with pagination"""
         try:
             query = "SELECT * FROM users LIMIT %s"
             rows = self.session.execute(query, (limit,))
-            return [dict(row) for row in rows]
+            return [self._row_to_dict(row) for row in rows]
         except Exception as e:
             logger.error(f"Error getting all users: {e}")
             raise
@@ -29,7 +35,7 @@ class UserRepository:
         try:
             query = "SELECT * FROM users WHERE id = %s"
             row = self.session.execute(query, (user_id,)).one()
-            return dict(row) if row else None
+            return self._row_to_dict(row)
         except Exception as e:
             logger.error(f"Error getting user by ID {user_id}: {e}")
             raise
@@ -40,7 +46,7 @@ class UserRepository:
             # Note: This would require a secondary index on mobile_no in production
             query = "SELECT * FROM users WHERE mobile_no = %s ALLOW FILTERING"
             row = self.session.execute(query, (mobile_no,)).one()
-            return dict(row) if row else None
+            return self._row_to_dict(row)
         except Exception as e:
             logger.error(f"Error getting user by mobile {mobile_no}: {e}")
             raise
@@ -51,7 +57,7 @@ class UserRepository:
             # Note: This would require a secondary index on email in production
             query = "SELECT * FROM users WHERE email = %s ALLOW FILTERING"
             row = self.session.execute(query, (email,)).one()
-            return dict(row) if row else None
+            return self._row_to_dict(row)
         except Exception as e:
             logger.error(f"Error getting user by email {email}: {e}")
             raise
